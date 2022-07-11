@@ -1,14 +1,14 @@
 const Manager = require('../lib/Manager');
 
 
-test("setting office number", () => {
+test("setup office number", () => {
     const testValue = "10";
-    const employee = new Manager("Grant", 1, "test@cheese.com", testValue);
+    const employee = new Manager("Brian", 1, "brian@gmail.com", testValue);
     expect(employee.officeNumber).toBe(testValue);
 })
 
-test("get Role function", () => {
+test("getRole function", () => {
     const testValue = "Manager";
-    const employee = new Manager("Grant", 1, "test@cheese.com", testValue);
+    const employee = new Manager("Brian", 1, "brian@gmail.com", testValue);
     expect(employee.getRole()).toBe(testValue);
 })

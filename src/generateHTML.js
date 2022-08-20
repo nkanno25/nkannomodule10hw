@@ -34,6 +34,8 @@ const generateCard = function (team) {
     </div>
 `
 
+// I'm creating a card with details unique to each employee type. Using the if/else statement, I'm filtering through employee options, that passes information into my variable which populates the html data that displays on the webpage.
+
 teamString = teamString + card;
 
 }

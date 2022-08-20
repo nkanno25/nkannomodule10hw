@@ -12,7 +12,7 @@ const appendFileAsync = util.promisify(fs.appendFile);
 let teamArray = [];
 let teamString = ``;
 
-async function main() {
+async function generate() {
     try {
         await prompt()
 
@@ -63,31 +63,31 @@ async function prompt() {
             if (response.role === "Engineer") {
                 response2 = await inquirer.prompt([{
                     type: "input",
-                    name: "x",
+                    name: "worker", // change
                     message: "What is the employee's github username?: ",
                 }, ]);
 
-                const engineer = new Engineer(response.name, response.id, response.email, response2.x);
+                const engineer = new Engineer(response.name, response.id, response.email, response2.worker);
                 teamArray.push(engineer);
             
             } else if (response.role === "Manager") {
                 response2 = await inquirer.prompt([{
                     type: "input",
-                    name: "x",
+                    name: "worker", // change
                     message: "What is the employee's office number?: ",
                 }, ]);
 
-                const manager = new Manager(response.name, response.id, response.email, response2.x);
+                const manager = new Manager(response.name, response.id, response.email, response2.worker);
                 teamArray.push(manager);
 
             } else if (response.role === "Intern") {
                 response2 = await inquirer.prompt([{
                     type: "input",
-                    name: "x",
+                    name: "worker", // change
                     message: "What school is employee attending: ",
                 }, ]);
 
-                const intern = new Intern(response.name, response.id, response.email, response2.x);
+                const intern = new Intern(response.name, response.id, response.email, response2.worker);
                 teamArray.push(intern);
             }
         } catch (err) {
@@ -105,4 +105,6 @@ async function prompt() {
     } while (responseDone.finish === "Yes");
 }
 
-main();
+generate();
+
+// node index

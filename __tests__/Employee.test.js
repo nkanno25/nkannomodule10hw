@@ -16,10 +16,10 @@ test('Set ID', () => {
     const employee = new Employee("Nick", testId);
     expect(employee.id).toBe(testId);
 });
-test('Set Email', () => {
-    const testEmail = "nick@gmail.com"
-    const employee = new Employee("Nick", 1, testEmail);
-    expect(employee.email).toBe(testEmail);
+test('Set Email', () => { // set email is just a description for the test
+    const testEmail = "nick@gmail.com" // setting an expected output value
+    const employee = new Employee("Nick", 1, testEmail); // creating a class with expected value as a property
+    expect(employee.email).toBe(testEmail); // testing that the method returns the expected value
 });
 test('get name from getName', () => {
     const testName = "Nick"
@@ -37,7 +37,9 @@ test('get email from getEmail', () => {
     expect(employee.getEmail()).toBe(testEmail);
 });
 test('getRole function', () => {
-    const testRole = "Employee"
+    const testRole = "employee"
     const employee = new Employee("Nick", 1, "nick@gmail.com.com");
     expect(employee.getRole()).toBe(testRole);
 });
+
+// Predefining what is expected from the funcion in employee.js. When I run the function, the outcome should match what is predefined.
